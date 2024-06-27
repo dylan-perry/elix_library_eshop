@@ -18,6 +18,7 @@ defmodule ElixLibraryEshopWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    get "/about", PageController, :about # Added route
   end
 
   # Other scopes may use custom stacks.
