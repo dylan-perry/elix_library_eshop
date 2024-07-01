@@ -17,6 +17,7 @@ defmodule ElixLibraryEshopWeb.Router do
   scope "/", ElixLibraryEshopWeb do
     pipe_through :browser
 
+    resources "/books", BookController
     get "/", PageController, :home
     get "/about", PageController, :about # Added route
   end
