@@ -1,0 +1,11 @@
+<h1 class="text-3xl mb-6">All Books</h1>
+
+<%!-- Short list implementation using :for --%>
+<ul class="list-disc">
+  <li :for={book <- @books}><%= book.title %></li>
+</ul>
+
+<%!-- Longer list implementation, equivalent to above --%>
+<%!-- <%= for book <- @books do %>
+    <li><%= book.title %></li>
+<% end %> --%>
