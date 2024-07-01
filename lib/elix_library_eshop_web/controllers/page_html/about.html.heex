@@ -1,3 +1,14 @@
 <h1 class="text-3xl mb-6">About</h1>
 
-<p>Welcome to the Library eShop!</p>
+<p>Welcome to the Library eShop!</p><br>
+
+<%!-- @ Shorthand (also accessible via @conn.assigns.message) can call the key, but will return an error if the key isn't set. --%>
+<%!-- <p><%= @message %></p><br> --%>
+
+<%!-- So, it's better to use this syntax: --%>
+<p><%= assigns[:message] %></p><br>
+<p><%= assigns[:other_message] %></p><br>
+
+<li :for={number <- 1..5}><%= number %></li>
+
+<p class="mt-3">&copy; <%= Date.utc_today.year %></p>
