@@ -1,5 +1,9 @@
 <h1 class="text-3xl mb-6">All Books</h1>
 
+<%!-- "information" function component derived from components/book_information.ex. This implementation uses the component's full module name, but we could also import BookInformation within BookHTML, and then use .information. --%>
+<%!-- Note that @books could also be expressed as assigns[:books] --%>
+<ElixLibraryEshopWeb.BookInformation.information books={@books}/>
+
 <%!-- Short list implementation using :for --%>
 <ul class="list-disc">
   <li :for={book <- @books}><%= book.title %></li>
