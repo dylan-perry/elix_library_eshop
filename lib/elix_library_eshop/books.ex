@@ -17,4 +17,8 @@ defmodule ElixLibraryEshop.Books do
     |> Book.changeset(attrs)
     |> Repo.update()
   end
+
+  def change_book(%Book{} = book, attrs \\ %{}) do
+    Book.changeset(book, attrs)
+  end
 end

@@ -1,0 +1,16 @@
+<h1 class="text-3xl mb-2">New Book</h1>
+
+<.simple_form :let={f} for={@changeset} action={~p"/books"}>
+    <.error :if={@changeset.action}>
+        Oops, something went wrong! Please check the errors below.
+    </.error>
+    <.input field={f[:title]} type="text" label="Title" />
+    <.input field={f[:content]} type="textarea" label="Content" />
+    <:actions>
+        <.button>Save Book</.button>
+    </:actions>
+</.simple_form>
+
+<br />
+
+<.link href={~p"/books"} class="text-sky-500 hover:underline">Back</.link>
