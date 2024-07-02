@@ -1,0 +1,7 @@
+<h1 class="text-3xl mb-2">Edit Book</h1>
+
+<.book_form changeset={@changeset} action={~p"/books/#{@book}"} />
+
+<br />
+
+<.link href={~p"/books/#{@book}"} class="text-sky-500 hover:underline">Back</.link>
