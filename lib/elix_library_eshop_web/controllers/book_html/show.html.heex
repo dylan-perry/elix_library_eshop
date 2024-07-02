@@ -1,0 +1,9 @@
+<h1 class="text-3xl mb-2"><%= @book.title %></h1>
+
+<p class="mt-4 mb-4"><%= @book.content %></p>
+
+<div class="mb-4">Added: <%=  @book.inserted_at %></div>
+
+<.link href={~p"/books"} class="text-sky-500 hover:underline">Edit</.link>
+·
+<.link href={~p"/books"} class="text-sky-500 hover:underline">Back</.link>
