@@ -8,7 +8,7 @@
 
 <.table id="books" rows={@books}>
   <:col :let={book} label="Title"><%= book.title %></:col>
-  <:col :let={book} label="Added"><%= book.inserted_at %></:col>
+  <:col :let={book} label="Added"><%= book_inserted_at(book) %></:col>
   <:action :let={book}>
     <.link href={~p"/books/#{book}"} class="text-sky-500 hover:underline">View</.link>
     ·
