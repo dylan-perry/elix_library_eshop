@@ -13,6 +13,8 @@ defmodule ElixLibraryEshop.Books.Book do
   def changeset(book, attrs) do
     book
     |> cast(attrs, [:title, :content])
-    |> validate_required([:title, :content])
+    |> validate_required([:title])
+    |> validate_length(:title, max: 100)
+    # note that validation functions can include a message: argument to customize error message
   end
 end

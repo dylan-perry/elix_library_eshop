@@ -5,4 +5,16 @@ defmodule ElixLibraryEshop.Books do
   def list_books, do: Repo.all(Book)
 
   def get_book!(id), do: Repo.get!(Book, id)
+
+  def create_book(attrs \\ %{}) do
+    %Book{}
+    |> Book.changeset(attrs)
+    |> Repo.insert()
+  end
+
+  def update_book(%Book{} = book, attrs) do
+    book
+    |> Book.changeset(attrs)
+    |> Repo.update()
+  end
 end
