@@ -14,6 +14,6 @@
     ·
     <.link href={~p"/books/#{book}/edit"} class="text-sky-500 hover:underline">Edit</.link>
     ·
-    <.link href={~p"/books/#{book}"} method="delete" class="text-sky-500 hover:underline">Delete</.link>
+    <.link href={~p"/books/#{book}"} method="delete" class="text-sky-500 hover:underline" data-confirm="Are you sure? This action cannot be undone.">Delete</.link>
   </:action>
 </.table>

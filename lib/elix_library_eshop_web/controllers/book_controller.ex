@@ -51,4 +51,13 @@ defmodule ElixLibraryEshopWeb.BookController do
         render(conn, :edit, book: book, changeset: changeset)
     end
   end
+
+  def delete(conn, %{"id" => id}) do
+    book = Books.get_book!(id)
+    {:ok, _book} = Books.delete_book(book)
+
+    conn
+    |> put_flash(:info, "Book deleted successfully.")
+    |> redirect(to: ~p"/books")
+  end
 end

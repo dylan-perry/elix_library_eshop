@@ -21,4 +21,8 @@ defmodule ElixLibraryEshop.Books do
   def change_book(%Book{} = book, attrs \\ %{}) do
     Book.changeset(book, attrs)
   end
+
+  def delete_book(%Book{} = book) do
+    Repo.delete(book)
+  end
 end
