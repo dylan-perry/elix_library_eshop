@@ -4,12 +4,16 @@
 <%!-- Note that @books could also be expressed as assigns[:books] --%>
 <ElixLibraryEshopWeb.BookInformation.information books={@books}/>
 
-<%!-- Short list implementation using :for --%>
-<ul class="list-disc">
-  <li :for={book <- @books}><%= book.title %></li>
-</ul>
+<.link href={~p"/books/new"} class="text-sky-500 hover:underline">Add new</.link>
 
-<%!-- Longer list implementation, equivalent to above --%>
-<%!-- <%= for book <- @books do %>
-    <li><%= book.title %></li>
-<% end %> --%>
+<.table id="books" rows={@books}>
+  <:col :let={book} label="Title"><%= book.title %></:col>
+  <:col :let={book} label="Added"><%= book.inserted_at %></:col>
+  <:action :let={book}>
+    <.link href={~p"/books/#{book}"} class="text-sky-500 hover:underline">View</.link>
+    ·
+    <.link href={~p"/books/#{book}/edit"} class="text-sky-500 hover:underline">Edit</.link>
+    ·
+    <.link href={~p"/books/#{book}"} method="delete" class="text-sky-500 hover:underline">Delete</.link>
+  </:action>
+</.table>
